@@ -1,5 +1,9 @@
 # Gitbook plugin for bulk redirects
 
+> **Note** This is a fork of the original plugin [on npm here](https://www.npmjs.com/package/gitbook-plugin-bulk-redirect). A fork was required because links in the redirect files created by this plugin are being picked up as containing bad links by the Dronecode gitbook link checker [htmlproofer](https://github.com/gjtorikian/html-proofer). Essentially all this change does is add the `data-proofer-ignore` attribute to the generated HTML so that it is ignored by our link checker.
+
+
+
 This plugin lets you create bulk redirects of URLs as part of Gitbook generation. This is useful if you need to add multiple redirects for articles without adding them to the `SUMMARY.md`.
 
 If you need to redirect individual pages, use the [redirect plugin](https://github.com/ketan/gitbook-plugin-redirect).
@@ -10,7 +14,7 @@ Add this to your `book.json` plugin list:
 
 ```json
 {
-    "plugins": [ "bulk-redirect" ]
+    "plugins": [ "bulk-redirect@git+https://github.com/Dronecode/gitbook-plugin-bulk-redirect.git"]
 }
 ```
 
